@@ -5,7 +5,7 @@ class Perfil extends CI_Controller {
         $this->load->library('session');
         $this->load->model('logar_model');
         $this->load->model('perfil_model');
-        $this->load->model('cidade_model');
+      
         $this->load->model('conf');
         $this->logar_model->protege();
 	}
@@ -19,8 +19,7 @@ class Perfil extends CI_Controller {
 
     public function editar() {
         $dados['user'] = $this->perfil_model->retorna_dados_usuario();
-        $dados['cidades'] = $this->cidade_model->retorna_todas_cidades();
-
+        
         if($this->input->post('alterar') != null){
             $data = array(
                 'login' => $this->input->post('login'), 
