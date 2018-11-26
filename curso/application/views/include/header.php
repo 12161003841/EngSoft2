@@ -16,6 +16,8 @@
   <link href="<?= base_url(); ?>assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="<?= base_url(); ?>assets/css/sb-admin.css" rel="stylesheet">
+    <!-- Shortcut -->
+    <link rel="shortcut icon" type="image/x-png" href="<?=base_url('favicon.ico')?>">
 </head>
 
 
