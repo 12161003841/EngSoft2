@@ -20,7 +20,7 @@ class Logar_model extends CI_Model {
         if($resultado){
             $this->session->set_userdata('id', $resultado[0]->id);
             $this->session->set_userdata('login', $resultado[0]->login);
-           
+            $this->session->set_userdata('sobre', $resultado[0]->sobre);
             $this->session->set_userdata('logado', '1');
             redirect("painel");
         }else{
@@ -50,18 +50,6 @@ class Logar_model extends CI_Model {
     }
 
 
-    function permit($dados){
-       
-
-        if ($dados['user']->permit == '0' ){
-            $this->conf->set_alertas("danger|Você não tem permissão para acessar esta pagina!");
-            redirect('painel');
-            
-        }
-
-    }
-
-
 
 
 
@@ -69,8 +57,8 @@ class Logar_model extends CI_Model {
     ////////////////////////////////////////////////////////
     ////////////////// SISTEMA DE CADASTRO /////////////////
     ////////////////////////////////////////////////////////
-    function cadastrar($login, $senha, $nome , $email , $cidade , $bairro , $rua , $numero){
-        if(($login != null) && ($senha != null) && ($nome != null)){
+    function cadastrar($login, $senha, $nome, $sobre){
+        if(($login != null) && ($senha != null) && ($nome != null) && ($sobre != null)){
             $this->db->select('*');
             $this->db->from('usuario');
             $this->db->where('login', $login);
@@ -80,13 +68,8 @@ class Logar_model extends CI_Model {
                 'login' => $login,
                 'senha' => $senha,
                 'nome' => $nome,
-                'email' => $email,
-                'cidade' => $cidade,
-                'bairro' => $bairro,
-                'rua' => $rua,
-                'numero' => $numero,
-               
-                
+                'sobre' => $sobre,
+                'cidade' => 0,
                 );
                 $this->db->insert('usuario', $data);
 

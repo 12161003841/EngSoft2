@@ -14,12 +14,9 @@
             </div>
             <div class="card-body">
                 <b>Login:</b> <?= $user->login; ?><br>
-                <b>Email:</b> <?= $user->email; ?><br>
                 <b>Nome:</b> <?= $user->nome; ?><br>
-                <b>Cidade:</b> <?= $user->cidade; ?><br>
-                <b>Logradouro:</b> <?= $user->rua; ?><br>
-                <b>Bairro:</b> <?= $user->bairro; ?><br>
-                <b>Numero:</b> <?= $user->numero; ?><br>
+                <b>Sobre:</b> <?= $user->sobre; ?><br>
+                <b>Cidade:</b> <?= $user->cid_nome; ?>
             </div>
         </div>
     </div>

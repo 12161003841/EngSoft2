@@ -12,7 +12,7 @@ class Perfil_model extends CI_Model {
         $id = $this->session->userdata['id'];
         $this->db->select('*');
         $this->db->from('usuario');
-       
+        $this->db->join('cidade', 'cidade = cid_id', 'left');
         $this->db->where('usuario.id', $id);
         return $this->db->get()->result()[0];
     }

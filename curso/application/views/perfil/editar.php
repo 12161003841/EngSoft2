@@ -17,29 +17,31 @@
                             <label>Nome</label>
                             <input class="form-control" type="text" name="nome" value="<?= $user->nome; ?>">
                         </div>
-                         <div class="col-md-6">
-                            <label>Email</label>
-                            <input class="form-control" type="text" name="email" value="<?= $user->email; ?>">
-                        </div>
-                         <div class="col-md-6">
-                            <label>Cidade</label>
-                            <input class="form-control" type="text" name="cidade" value="<?= $user->cidade; ?>">
-                        </div>
-                         <div class="col-md-6">
-                            <label>Bairro</label>
-                            <input class="form-control" type="text" name="bairro" value="<?= $user->bairro; ?>">
-                        </div>
-                         <div class="col-md-6">
-                            <label>Logradouro</label>
-                            <input class="form-control" type="text" name="rua" value="<?= $user->rua; ?>">
-                        </div>
-                        <div class="col-md-6">
-                            <label>Numero</label>
-                            <input class="form-control" type="text" name="numero" value="<?= $user->numero; ?>">
-                        </div>
                     </div>
                 </div>
-
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <label>Cidade</label>
+                            <select class="form-control" name="cidade">
+                                <?php 
+                                foreach ($cidades as $n) { 
+                                    if($n->cid_id == $user->cidade){
+                                        echo "<option value=\"".$n->cid_id."\" selected>".$n->cid_nome."</option>";
+                                    }else{
+                                        echo "<option value=\"".$n->cid_id."\">".$n->cid_nome."</option>";
+                                    }
+                                }
+                                ?>
+                            </select> 
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <label>Sobre</label>
+                            <textarea class="form-control" type="text" name="sobre"><?= $user->sobre; ?></textarea>
+                        </div>
+                    </div>
                 </div>
                 <input type="submit" class="btn btn-primary btn-block" name="alterar" value="Salvar">
             </form>

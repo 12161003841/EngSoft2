@@ -17,7 +17,7 @@ class Principal extends CI_Controller {
         //verifica avisos
         $dados = null;
         if($aviso == "incorreto"){ $dados['aviso'] = "Dados Incorretos"; $dados['tipo'] = "danger"; }
-        if($aviso == "logout"){ $dados['aviso'] = "Sentiremos sua falta!"; $dados['tipo'] = "success"; }
+        if($aviso == "logout"){ $dados['aviso'] = "Logoff realizado com sucesso!"; $dados['tipo'] = "success"; }
         if($aviso == "cadastrou"){ $dados['aviso'] = "Cadastro realizado com sucesso!"; $dados['tipo'] = "success"; }
         if($aviso == "problema"){ $dados['aviso'] = "Houve um problema! Por favor contate o administrador!"; $dados['tipo'] = "danger"; }
 
@@ -48,15 +48,9 @@ class Principal extends CI_Controller {
             $login = $this->input->post('login');
             $senha = $this->input->post('senha');
             $nome = $this->input->post('nome');
-            $email = $this->input->post('email');
-            $cidade = $this->input->post('cidade');
-            $bairro = $this->input->post('bairro');
-            $rua = $this->input->post('rua');
-            $numero = $this->input->post('numero');
-                    
+            $sobre = $this->input->post('sobre');
 
-
-            $resultado = $this->logar_model->cadastrar($login, $senha, $nome,$email,$cidade,$bairro,$rua,$numero);
+            $resultado = $this->logar_model->cadastrar($login, $senha, $nome, $sobre);
 
             if($resultado){ 
                 redirect("principal/logar/cadastrou");

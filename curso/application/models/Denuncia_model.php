@@ -7,29 +7,10 @@ class Denuncia_model extends CI_Model{
 
 
       function retorna_todas_denuncias(){
-        $this->db->select('usuario.nome as n2 , crimes.nome as n1 , den_id,denuncia.cidade,denuncia.bairro,denuncia.rua,denuncia.numero,denuncia.desc,ref,data,likes');
+        $this->db->select('usuario.nome as n2 , crimes.nome as n1 , den_id,denuncia.cidade,denuncia.bairro,denuncia.rua,denuncia.numero,denuncia.desc,ref,data');
         $this->db->from('denuncia');
         $this->db->join('crimes','crime_id = cri_id','left');
         $this->db->join('usuario','pessoa_id = id','left');
-        return $this->db->get()->result();
-    }
-
-      function retorna_denuncias_novas(){
-        $this->db->select('usuario.nome as n2 , crimes.nome as n1 , den_id,denuncia.cidade,denuncia.bairro,denuncia.rua,denuncia.numero,denuncia.desc,ref,data,likes');
-        $this->db->from('denuncia');
-        $this->db->join('crimes','crime_id = cri_id','left');
-        $this->db->join('usuario','pessoa_id = id','left');
-        $this->db->where('status','0');
-        return $this->db->get()->result();
-    }
-
-
-      function retorna_denuncias_validadas(){
-        $this->db->select('usuario.nome as n2 , crimes.nome as n1 , den_id,denuncia.cidade,denuncia.bairro,denuncia.rua,denuncia.numero,denuncia.desc,ref,data,likes');
-        $this->db->from('denuncia');
-        $this->db->join('crimes','crime_id = cri_id','left');
-        $this->db->join('usuario','pessoa_id = id','left');
-        $this->db->where('status', '1');
         return $this->db->get()->result();
     }
 

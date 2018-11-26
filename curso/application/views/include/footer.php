@@ -4,7 +4,7 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Guilherme_Fisico@2018</small>
+          <small>Labsoft © Curso 2018</small>
         </div>
       </div>
     </footer>

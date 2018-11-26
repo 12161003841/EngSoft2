@@ -3,7 +3,7 @@
         <h1>Validar Denuncia</h1>
     </div>
     <div style="float: right;">
-        <a class="btn btn-primary" href="<?= base_url(); ?>painel/denuncias">Voltar</a>
+        <a class="btn btn-primary" href="<?= base_url(); ?>painel/crimes">Voltar</a>
     </div>
     <div style="clear: both;"></div>
 </div>

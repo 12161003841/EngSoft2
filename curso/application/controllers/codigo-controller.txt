@@ -1,27 +1,3 @@
-<?php
-class Painel extends CI_Controller {
-
-    public function __construct() {
-        parent::__construct();
-        $this->load->library('session');
-        $this->load->model('logar_model');
-        $this->load->model('perfil_model');
-        $this->load->model('cidade_model');
-        $this->load->model('conf');
-        $this->logar_model->protege();
-    }
-
-
-
-    public function index() {
-        $dados['user'] = $this->perfil_model->retorna_dados_usuario();
-
-        $this->load->view('include/header', $dados);
-        $this->load->view('painel/home', $dados);
-        $this->load->view('include/footer');
-    }
-
-
     public function cidades($pag = null, $par = null) {
         $dados['user'] = $this->perfil_model->retorna_dados_usuario();
         $dados['cidades'] = $this->cidade_model->retorna_todas_cidades();
@@ -81,12 +57,3 @@ class Painel extends CI_Controller {
         
         $this->load->view('include/footer');
     }
-
-
-
-
-
-
-
-
-}

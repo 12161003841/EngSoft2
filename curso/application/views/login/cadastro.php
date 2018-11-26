@@ -21,36 +21,10 @@
                             <label for="exampleInputPassword1">Nome</label>
                             <input class="form-control" type="text" name="nome">
                         </div>
-
                         <div class="col-md-6">
-                            <label for="exampleInputPassword1">Email</label>
-                            <input class="form-control" type="text" name="email">
+                            <label for="exampleConfirmPassword">Sobre</label>
+                            <input class="form-control" type="text" name="sobre">
                         </div>
-
-                        <div class="col-md-6">
-                            <label for="exampleInputPassword1">Cidade</label>
-                            <input class="form-control" type="text" name="cidade">
-                        </div>
-
-
-                        <div class="col-md-6">
-                            <label for="exampleInputPassword1">Bairro</label>
-                            <input class="form-control" type="text" name="bairro">
-                        </div>
-
-                                                <div class="col-md-6">
-                            <label for="exampleInputPassword1">Rua</label>
-                            <input class="form-control" type="text" name="rua">
-                        </div>
-
-
-                                                <div class="col-md-6">
-                            <label for="exampleInputPassword1">Numero</label>
-                            <input class="form-control" type="text" name="numero">
-                        </div>
-
-       
-
                     </div>
                 </div>
                 <input type="submit" class="btn btn-primary btn-block" name="cadastrar" value="Cadastrar">
