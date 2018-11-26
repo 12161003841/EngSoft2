@@ -33,10 +33,10 @@
             <span class="nav-link-text">Painel</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Cidades">
-          <a class="nav-link" href="<?= base_url(); ?>painel/cidades">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Crimes">
+          <a class="nav-link" href="<?= base_url(); ?>painel/crimes">
             <i class="fa fa-fw fa-building"></i>
-            <span class="nav-link-text">Cidades</span>
+            <span class="nav-link-text">Infrações</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Perfil">

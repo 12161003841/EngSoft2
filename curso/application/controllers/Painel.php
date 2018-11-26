@@ -24,12 +24,12 @@ class Painel extends CI_Controller {
 
     public function cidades($pag = null, $par = null) {
         $dados['user'] = $this->perfil_model->retorna_dados_usuario();
-        $dados['cidades'] = $this->cidade_model->retorna_todas_cidades();
+        $dados['crimes'] = $this->cidade_model->retorna_todas_cidades();
 
         $this->load->view('include/header', $dados);
 
         if($pag == null){
-            $this->load->view('painel/cidades/home', $dados);  
+            $this->load->view('painel/crimes/home', $dados);  
         }
 
 
@@ -42,9 +42,9 @@ class Painel extends CI_Controller {
                 }else{
                     $this->conf->set_alertas("danger|Houve um problema! Contate o administrador!");
                 }
-                redirect('painel/cidades');
+                redirect('painel/crimes');
             }
-            $this->load->view('painel/cidades/inserir', $dados);  
+            $this->load->view('painel/crimes/inserir', $dados);  
         }
 
 
@@ -57,10 +57,10 @@ class Painel extends CI_Controller {
                 }else{
                     $this->conf->set_alertas("danger|Houve um problema! Contate o administrador!");
                 }
-                redirect('painel/cidades');
+                redirect('painel/crimes');
             }
             $dados['cidade'] = $this->cidade_model->ver($par);
-            $this->load->view('painel/cidades/alterar', $dados);
+            $this->load->view('painel/crimes/alterar', $dados);
         }
 
 
@@ -72,10 +72,10 @@ class Painel extends CI_Controller {
                 }else{
                     $this->conf->set_alertas("danger|Houve um problema! Contate o administrador!");
                 }
-                redirect('painel/cidades');
+                redirect('painel/crimes');
             }
             $dados['cidade'] = $this->cidade_model->ver($par);
-            $this->load->view('painel/cidades/apagar', $dados);
+            $this->load->view('painel/crimes/apagar', $dados);
         }
 
         

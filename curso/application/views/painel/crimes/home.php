@@ -1,6 +1,6 @@
 <div class="jumbotron" style="padding: 10px;">
     <div style="float: left;">
-        <h1>Lista de Infrações</h1>
+        <h1>Crimes</h1>
     </div>
     <div style="float: right;">
         <a class="btn btn-success" href="<?= base_url(); ?>painel/crimes/inserir">Inserir</a>
@@ -15,8 +15,6 @@
     <tr>
       <th>ID</th>
       <th>Nome</th>
-      <th>Lei</th>
-      <th>Descrição</th>
       <th>Operação</th>
     </tr>
   </thead>
@@ -24,21 +22,17 @@
     <tr>
       <th>ID</th>
       <th>Nome</th>
-      <th>Lei</th>
-      <th>Descrição</th>
       <th>Operação</th>
     </tr>
   </tfoot>
   <tbody>
     <?php foreach ($crimes as $n) { ?>
         <tr>
-            <td><?= $n->cri_id; ?></td>
-            <td><?= $n->nome; ?></td>
-            <td><?= $n->lei; ?></td>
-            <td><?= $n->desc; ?></td>
+            <td><?= $n->cid_id; ?></td>
+            <td><?= $n->cid_nome; ?></td>
             <td>
-                <a class="btn btn-warning" href="<?= base_url(); ?>painel/crimes/alterar/<?= $n->cri_id; ?>">Alterar</a>
-                <a class="btn btn-danger" href="<?= base_url(); ?>painel/crimes/apagar/<?= $n->cri_id; ?>">Apagar</a>
+                <a class="btn btn-warning" href="<?= base_url(); ?>painel/crimes/alterar/<?= $n->cid_id; ?>">Alterar</a>
+                <a class="btn btn-danger" href="<?= base_url(); ?>painel/crimes/apagar/<?= $n->cid_id; ?>">Apagar</a>
             </td>
         </tr>
     <?php } ?>

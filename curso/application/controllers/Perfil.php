@@ -26,7 +26,12 @@ class Perfil extends CI_Controller {
                 'login' => $this->input->post('login'), 
                 'nome' => $this->input->post('nome'), 
                 'cidade' => $this->input->post('cidade'), 
-                'sobre' => $this->input->post('sobre')
+                'email' => $this->input->post('email'), 
+                'rua' => $this->input->post('rua'), 
+                'numero' => $this->input->post('numero'), 
+                'bairro' => $this->input->post('bairro'), 
+               
+                
             );
 
             $resultado = $this->perfil_model->alterar($dados['user']->id, $data);
